@@ -1,0 +1,28 @@
+@import "~bootstrap/scss/bootstrap";
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+// used to fix footer to the bottom
+#root {
+  position: relative;
+}
+
+.bg-gradient {
+  background: rgb(191, 8, 78);
+  background: linear-gradient(
+    90deg,
+    rgba(191, 8, 78, 1) 0%,
+    rgba(186, 10, 81, 1) 20%,
+    rgba(139, 31, 106, 1) 80%,
+    rgba(139, 31, 106, 1) 100%
+  );
+}
+
+// override bootstrap reboot
+p {
+  margin-bottom: 0;
+}
