@@ -1,22 +1,11 @@
-import { TeamsContext } from './../../teamsContext.js'
 import MaterialTable from 'material-table'
 import Card from 'react-bootstrap/Card'
 import { useContext, useEffect, useState } from 'react'
+import { TeamContext } from './../../teamContext'
 
 function MyTeams() {
 
-    const [getTeams] = useContext(TeamsContext)
-    const [teams, setTeams] = useState([])
-
-    useEffect(() => {
-        async function fetchTeams() {
-
-            var result = await getTeams()
-            setTeams(result)
-        }
-
-        fetchTeams()
-    }, [])
+    const { teams } = useContext(TeamContext)
 
     return (
         <Card>

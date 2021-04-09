@@ -1,27 +1,16 @@
 import './Top5.scss'
 import ListGroup from "react-bootstrap/ListGroup"
 import Card from "react-bootstrap/Card"
-import { useContext, useEffect, useState } from 'react'
-import { TeamsContext } from '../../teamsContext'
+import { useContext } from 'react'
+import { TeamContext, getHightestAverageAge, getLowestAverageAge } from '../../teamContext'
 
 function Top5() {
 
-    const [getTeams, getHightestAverageAge, getLowestAverageAge] = useContext(TeamsContext)
-    const [teams, setTeams] = useState([])
+    const { teams } = useContext(TeamContext)
 
-    useEffect(() => {
-        async function fetchTeams() {
-            console.log('getTeams: ' + getTeams);
-            var result = await getTeams()
-            setTeams(result)
-        }
+    const hightestAverageAge = getHightestAverageAge(teams)
 
-        fetchTeams()
-    }, [])
-
-    const hightestAverageAge = getHightestAverageAge()
-
-    const lowestAverageAge = getLowestAverageAge()
+    const lowestAverageAge = getLowestAverageAge(teams)
 
     return (
         <Card>

@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { teamsContext } from './teamsContext.js'
 
 const playerPickCount = new Map()
 
-const mostPickedPlayer = () => {}
+function PlayersContext() {
 
-const lessPickedPlayer = () => {}
+    const [getTeams] = useContext(teamsContext)()
 
-const registerNewPicks = (teams) => {console.log(teams);}
+    const mostPickedPlayer = async () => {
+        const teams = await getTeams()
+        console.log('teams: ', teams);
+    }
 
+    const lessPickedPlayer = () => { }
 
-export const PlayersContext = React.createContext([mostPickedPlayer, lessPickedPlayer, registerNewPicks])
+    const registerNewPicks = (teams) => { console.log(teams); }
+
+}
+
+export const playersContext = React.createContext(PlayersContext)
