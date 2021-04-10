@@ -22,13 +22,9 @@ function HomePage() {
 
     return (
         <div>
-            <TeamContext.Provider value={{ teams, setTeams }}>
-                <Container fluid>
-                    <MyTeams />
-                    <Top5 />
-                    <HighlightedPlayers />
-                </Container>
-            </TeamContext.Provider>
+            <MyTeams teams={teams} />
+            <Top5 />
+            <HighlightedPlayers />
         </div>
     )
 }

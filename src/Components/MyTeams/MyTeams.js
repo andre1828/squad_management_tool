@@ -1,15 +1,17 @@
 import MaterialTable from 'material-table'
 import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 import { useContext, useEffect, useState } from 'react'
 import { TeamContext } from './../../teamContext'
+import { useHistory } from 'react-router-dom'
 
-function MyTeams() {
+function MyTeams(props) {
 
-    const { teams } = useContext(TeamContext)
+    const history = useHistory()
 
     return (
         <Card>
-            <Card.Header>My Teams</Card.Header>
+            <Card.Header>My Teams <Button onClick={() => history.push('/create-team')}>+</Button> </Card.Header>
             <Card.Body>
                 <MaterialTable
                     options={
@@ -21,7 +23,7 @@ function MyTeams() {
                     ]}
 
                     data={
-                        teams.map(team => {
+                        props.teams.map(team => {
                             return { Name: team.team_name, Description: team.team_name + " Squad" }
                         })
                     }
