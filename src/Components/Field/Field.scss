@@ -40,27 +40,27 @@
     position: relative;
     justify-self: center;
     align-self: center;
-}
 
-.field-player-position::before {
-    color: #ffffff;
-    content: "+";
-    font-size: 1.4rem;
-    margin-left: calc(50% - 7px);
-    line-height: 2;
-}
+    &::before {
+        color: #ffffff;
+        content: "+";
+        font-size: 1.4rem;
+        margin-left: calc(50% - 7px);
+        line-height: 2;
+    }
 
-.field-player-position::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border-radius: 50%;
-    border: 1px dashed #a65aa1;
-    margin: -5px;
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 50%;
+        border: 1px dashed #a65aa1;
+        margin: -5px;
+    }
 }
 
 .middle {

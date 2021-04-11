@@ -11,6 +11,10 @@ body,
   position: relative;
 }
 
+body {
+  background-color: #f7f3f7;
+}
+
 .bg-gradient {
   background: rgb(191, 8, 78);
   background: linear-gradient(
@@ -20,6 +24,19 @@ body,
     rgba(139, 31, 106, 1) 80%,
     rgba(139, 31, 106, 1) 100%
   );
+}
+
+.card {
+  margin-top: 15px;
+  box-shadow: 2px 5px 9px #696f6d1a;
+  border: none;
+  border-radius: 5px;
+}
+
+.card-header {
+  color: #603a8c;
+  font-weight: bolder;
+  background-color: #ffffff;
 }
 
 // override bootstrap reboot

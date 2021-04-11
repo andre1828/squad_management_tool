@@ -1,0 +1,28 @@
+// only for card headers with a button
+.header-action {
+    display: flex;
+    justify-content: space-between;
+    line-height: 2;
+}
+
+.btn-create-team {
+    background: rgb(167, 57, 120);
+    background: linear-gradient(
+        180deg,
+        rgba(167, 57, 120, 1) 0%,
+        rgba(159, 56, 121, 1) 60%,
+        rgba(138, 52, 124, 1) 80%,
+        rgba(131, 51, 125, 1) 100%
+    );
+    max-height: 36px;
+    box-shadow: 1px 4px 10px #85307a87;
+    border: none;
+    border-radius: 10px;
+
+    &::after {
+        content: "+";
+        font-size: 1.4rem;
+        line-height: 1;
+        font-family: Roboto;
+    }
+}

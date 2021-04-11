@@ -1,3 +1,4 @@
+import './MyTeams.scss'
 import MaterialTable from 'material-table'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
@@ -11,7 +12,10 @@ function MyTeams(props) {
 
     return (
         <Card>
-            <Card.Header>My Teams <Button onClick={() => history.push('/create-team')}>+</Button> </Card.Header>
+            <Card.Header className="header-action">
+                My Teams
+                <Button className="btn-create-team" onClick={() => history.push('/create-team')}></Button>
+            </Card.Header>
             <Card.Body>
                 <MaterialTable
                     options={
