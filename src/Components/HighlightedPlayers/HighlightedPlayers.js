@@ -1,20 +1,20 @@
-import Card from "react-bootstrap/Card"
+import profilePic from './profile-pic.png'
+import './HighlightedPlayers.scss'
 
 function HighlightedPlayers() {
     return (
-        <Card>
-            <Card.Body>
-
-                <div>
-                    <p>Most picked player</p>
-                    <p>percentage: { }</p>
-                </div>
-                <div>
-                    <p>Less picked player</p>
-                    <p>percentage: { }</p>
-                </div>
-            </Card.Body>
-        </Card>
+        <div className="highlighted-players">
+            <div className="highlighted-player most-picked">
+                <h3 className="subtitle" >Most picked player</h3>
+                <img src={profilePic} alt="avatar icon" className="player-picture" />
+                <p className="player-percentage">75%</p>
+            </div>
+            <div className="highlighted-player">
+                <h3 className="subtitle">Less picked player</h3>
+                <img src={profilePic} alt="avatar icon" className="player-picture" />
+                <p className="player-percentage">25%</p>
+            </div>
+        </div>
     )
 }
 
