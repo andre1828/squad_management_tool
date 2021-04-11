@@ -1,9 +1,11 @@
 import Form from "react-bootstrap/Form";
-import { InputGroup } from "react-bootstrap";
+import { InputGroup, Row, Col, ListGroup } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import Field from './../Field/Field.js'
+import './createTeam.scss'
+import Container from "react-bootstrap/Container";
 
 function CreateTeam() {
     return (
@@ -35,16 +37,30 @@ function CreateTeam() {
                 <Card.Text className="text-center">CONFIGURE SQUAD</Card.Text>
                 <Form.Group>
                     <Form.Label>Formation</Form.Label>
-                    <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-                        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                        <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                        <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                    <DropdownButton id="dropdown-basic-button" title="3 - 4 - 3">
+                        <Dropdown.Item value="3-2-2-3">3 - 2 - 2 - 3</Dropdown.Item>
+                        <Dropdown.Item value="3-2-3-1">3 - 2 - 3 - 1</Dropdown.Item>
+                        <Dropdown.Item value="3-4-3">3 - 4 - 3</Dropdown.Item>
+                        <Dropdown.Item value="3-5-2">3 - 5 - 2</Dropdown.Item>
+                        <Dropdown.Item value="4-2-3-1">4 - 2 - 3 - 1</Dropdown.Item>
+                        <Dropdown.Item value="4-3-1-1">4 - 3 - 1 - 1</Dropdown.Item>
+                        <Dropdown.Item value="4-3-2">4 - 3 - 2</Dropdown.Item>
+                        <Dropdown.Item value="4-4-2">4 - 4 - 2</Dropdown.Item>
+                        <Dropdown.Item value="4-5-1">4 - 5 - 1</Dropdown.Item>
+                        <Dropdown.Item value="5-4-1">5 - 4 -1</Dropdown.Item>
                     </DropdownButton>
-                    <Field/>
                 </Form.Group>
+                <Field />
                 <Form.Group>
                     <Form.Label>Search Players</Form.Label>
-                    <Form.Control type="text"/>
+                    <Form.Control type="text" />
+                    <ListGroup className="player-list">
+                        <ListGroup.Item className="player">
+                            <p>Name: <span className="value">Cristiano Rolando</span></p>
+                            <p>Age: <span className="value">32</span> </p>
+                            <p>Nationality: <span className="value">Portugal</span></p>
+                        </ListGroup.Item>
+                    </ListGroup>
                 </Form.Group>
             </Card.Body>
         </Card>

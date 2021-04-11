@@ -1,22 +1,22 @@
-.list-group {
+.age-average-list {
     padding: 0.2rem;
     background-color: #e9e3e8;
     border-radius: 10px;
-}
 
-.list-group-item {
-    border-radius: 10px;
+    .age-average {
+        border-radius: 10px;
 
-    &:not(:first-child) {
-        margin-top: 2px;
-    }
+        &:not(:first-child) {
+            margin-top: 2px;
+        }
 
-    &:hover {
-        border: 1.5px solid rgb(198, 4, 69);
-    }
+        &:hover {
+            border: 1.5px solid rgb(198, 4, 69);
+        }
 
-    &:not(:first-child):hover {
-        padding-top: 11.5px;
-        padding-bottom: 11.5px;
+        &:not(:first-child):hover {
+            padding-top: 11.5px;
+            padding-bottom: 11.5px;
+        }
     }
 }
