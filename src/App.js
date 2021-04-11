@@ -1,8 +1,6 @@
 import './App.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Header from './Components/Header/Header.js';
 import HomePage from './Components/HomePage/HomePage.js';
 import CreateTeam from './Components/CreateTeam/CreateTeam.js';

@@ -1,3 +1,13 @@
+.my-teams {
+    height: 100%;
+    margin-bottom: 10px;
+
+    tr:hover {
+        background-color: #f7eef6;
+        border-color: #f7eef6;
+    }
+}
+
 // only for card headers with a button
 .header-action {
     display: flex;

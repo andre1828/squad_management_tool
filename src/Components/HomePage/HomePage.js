@@ -1,31 +1,40 @@
-import Container from 'react-bootstrap/Container'
 import MyTeams from './../MyTeams/MyTeams.js'
 import Top5 from './../Top5/Top5.js'
-// import Top5 from './../Top5/Top5.js'
 import HighlightedPlayers from './../HighlightedPlayers/HighlightedPlayers.js'
-import { TeamContext, addTeams, fetchTeams } from './../../teamContext.js'
-import { useEffect, useReducer } from 'react'
+import { addTeams, fetchTeams } from './../../teamContext.js'
+import { useEffect, useReducer, useState } from 'react'
+import { Col, Modal, Row, Button } from 'react-bootstrap'
 
 function HomePage() {
 
-    const [teams, setTeams] = useReducer(addTeams, [])
+    const [teams, setTeams] = useState([])
 
     useEffect(() => {
         async function asyncFetch() {
 
-            var result = await fetchTeams()
-            setTeams(result)
+            if (teams.length === 0) {
+                var result = await fetchTeams()
+                setTeams(result)
+            }
         }
 
         asyncFetch()
     }, [])
 
     return (
-        <div>
-            <MyTeams teams={teams} />
-            <Top5 />
-            <HighlightedPlayers />
-        </div>
+        <>
+            <div>
+                <Row>
+                    <Col xs={12} md={6}>
+                        <MyTeams teams={teams} />
+                    </Col>
+                    <Col>
+                        <Top5 teams={teams} />
+                        <HighlightedPlayers />
+                    </Col>
+                </Row>
+            </div>
+        </>
     )
 }
 

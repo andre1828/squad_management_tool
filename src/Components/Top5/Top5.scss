@@ -1,9 +1,15 @@
+.age-average-heading {
+    margin-top: 10px;
+}
+
 .age-average-list {
     padding: 0.2rem;
     background-color: #e9e3e8;
     border-radius: 10px;
 
     .age-average {
+        display: flex;
+        justify-content: space-between;
         border-radius: 10px;
 
         &:not(:first-child) {
@@ -17,6 +23,10 @@
         &:not(:first-child):hover {
             padding-top: 11.5px;
             padding-bottom: 11.5px;
+        }
+
+        .value {
+            font-weight: bold;
         }
     }
 }

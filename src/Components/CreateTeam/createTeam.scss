@@ -1,11 +1,37 @@
-.flex {
-    display: flex;
-    line-height: 2;
+.section-title {
+    color: #c4c4c4;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.dropdown-toggle {
+    background-color: white;
+    color: black;
+    border-color: gray;
+}
+
+.btn-save-team {
+    width: 100%;
+    max-width: 288px;
+    margin-top: 10px;
+    background: rgb(167, 57, 120);
+    background: linear-gradient(
+        180deg,
+        rgba(167, 57, 120, 1) 0%,
+        rgba(159, 56, 121, 1) 60%,
+        rgba(138, 52, 124, 1) 80%,
+        rgba(131, 51, 125, 1) 100%
+    );
+
+    border: 0.5px solid #bf0648;
+
+    &:hover {
+        border: 0.5px solid #bf0648;
+    }
 }
 
 .player-list {
     background-color: transparent;
-    width: 90%;
 
     .player {
         background: rgb(252, 252, 252);
@@ -22,10 +48,10 @@
         display: grid;
         grid-template-columns: 80% 20%;
         grid-template-rows: 35px 25px;
-    }
-}
 
-.value {
-    color: #c81050;
-    margin-left: 0.5em;
+        .value {
+            color: #c81050;
+            margin-left: 0.5em;
+        }
+    }
 }

@@ -1,16 +1,13 @@
 import './Top5.scss'
 import ListGroup from "react-bootstrap/ListGroup"
-import Card from "react-bootstrap/Card"
-import { useContext } from 'react'
-import { TeamContext, getHightestAverageAge, getLowestAverageAge } from '../../teamContext'
+import { Card, Container, Row, Col } from "react-bootstrap"
+import { getHightestAverageAge, getLowestAverageAge } from '../../teamContext'
 
-function Top5() {
+function Top5(props) {
 
-    const { teams } = useContext(TeamContext)
+    const hightestAverageAge = getHightestAverageAge(props.teams)
 
-    const hightestAverageAge = getHightestAverageAge(teams)
-
-    const lowestAverageAge = getLowestAverageAge(teams)
+    const lowestAverageAge = getLowestAverageAge(props.teams)
 
     return (
         <Card>
@@ -18,28 +15,34 @@ function Top5() {
                 Top 5
             </Card.Header>
             <Card.Body>
-                <Card.Title>Hightest Average Age</Card.Title>
-                <ListGroup className="age-average-list">
-
-                    {
-                        hightestAverageAge.map(team => (
-                            <ListGroup.Item className="age-average" key={team.team_key}>
-                                <Card.Text>{team.team_name}</Card.Text>
-                                <Card.Text>{team.team_average_age}</Card.Text>
-                            </ListGroup.Item>
-                        ))}
-                </ListGroup>
-                <Card.Title>Lowest Average Age</Card.Title>
-                <ListGroup className="age-average-list">
-
-                    {
-                        lowestAverageAge.map(team => (
-                            <ListGroup.Item className="age-average" key={team.team_key}>
-                                <Card.Text>{team.team_name}</Card.Text>
-                                <Card.Text>{team.team_average_age}</Card.Text>
-                            </ListGroup.Item>
-                        ))}
-                </ListGroup>
+                <Row>
+                    <Col>
+                        <Card.Title className="age-average-heading">Hightest avg age</Card.Title>
+                        <ListGroup className="age-average-list">
+                            {
+                                hightestAverageAge.map(team => (
+                                    <ListGroup.Item className="age-average" key={team.team_key}>
+                                        <Card.Text>{team.team_name}</Card.Text>
+                                        <Card.Text className="value">{team.team_average_age}</Card.Text>
+                                    </ListGroup.Item>
+                                ))
+                            }
+                        </ListGroup>
+                    </Col>
+                    <Col>
+                        <Card.Title className="age-average-heading" >Lowest avg Age</Card.Title>
+                        <ListGroup className="age-average-list">
+                            {
+                                lowestAverageAge.map(team => (
+                                    <ListGroup.Item className="age-average" key={team.team_key}>
+                                        <Card.Text>{team.team_name}</Card.Text>
+                                        <Card.Text className="value">{team.team_average_age}</Card.Text>
+                                    </ListGroup.Item>
+                                ))
+                            }
+                        </ListGroup>
+                    </Col>
+                </Row>
             </Card.Body>
         </Card>
     )
