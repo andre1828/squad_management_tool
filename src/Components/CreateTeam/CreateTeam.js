@@ -15,7 +15,6 @@ function CreateTeam() {
         <Card>
             <Card.Header>Create your team</Card.Header>
             <Card.Body>
-                <Container>
                     <Card.Text className="text-center section-title">TEAM INFORMATION</Card.Text>
                     <Row>
                         <Col xs={12} md={6}>
@@ -79,7 +78,6 @@ function CreateTeam() {
                             </Form.Group>
                         </Col>
                     </Row>
-                </Container>
             </Card.Body>
         </Card>
     )

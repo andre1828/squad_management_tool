@@ -23,7 +23,6 @@ function HomePage() {
 
     return (
         <>
-            <div>
                 <Row>
                     <Col xs={12} md={6}>
                         <MyTeams teams={teams} />
@@ -33,7 +32,6 @@ function HomePage() {
                         <HighlightedPlayers />
                     </Col>
                 </Row>
-            </div>
         </>
     )
 }

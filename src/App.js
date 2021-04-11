@@ -1,6 +1,6 @@
 import './App.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Container from 'react-bootstrap/Container';
+import { Container, Row, Col } from 'react-bootstrap';
 import Header from './Components/Header/Header.js';
 import HomePage from './Components/HomePage/HomePage.js';
 import CreateTeam from './Components/CreateTeam/CreateTeam.js';
@@ -14,22 +14,24 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Container fluid>
-        <TeamContext.Provider value={{ teams, setTeams }}>
-          <Router>
-            <Switch>
-              <Route path="/create-team" >
-                <CreateTeam />
-              </Route>
-              <Route path="/" >
-                <HomePage />
-              </Route>
-            </Switch>
-          </Router>
-        </TeamContext.Provider>
-      </Container>
-      {/* <Footer /> */}
+      <div className="app-container">
+        <Header />
+        <Container fluid className="content-container">
+          <TeamContext.Provider value={{ teams, setTeams }}>
+            <Router>
+              <Switch>
+                <Route path="/create-team" >
+                  <CreateTeam />
+                </Route>
+                <Route path="/" >
+                  <HomePage />
+                </Route>
+              </Switch>
+            </Router>
+          </TeamContext.Provider>
+        </Container>
+        <Footer />
+      </div>
     </>
   );
 }

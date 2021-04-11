@@ -6,15 +6,23 @@ body,
   height: 100%;
 }
 
-// used to fix footer to the bottom
-#root {
-  position: relative;
-}
-
 body {
   background-color: #f7f3f7;
 }
 
+.app-container {
+  display: grid;
+  height: 100%;
+  grid-template-areas: "header" "content" "footer";
+  grid-template-rows: auto 1fr auto;
+}
+
+.content-container{
+  min-height: 86.7vh;
+  overflow: auto;
+}
+
+// create gradient bg variant in bootstrap
 .bg-gradient {
   background: rgb(191, 8, 78);
   background: linear-gradient(

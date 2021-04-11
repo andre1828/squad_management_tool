@@ -16,8 +16,8 @@ function Top5(props) {
             </Card.Header>
             <Card.Body>
                 <Row>
-                    <Col>
-                        <Card.Title className="age-average-heading">Hightest avg age</Card.Title>
+                    <Col xs={12} lg={6}>
+                        <Card.Subtitle className="age-average-heading">Hightest avg age</Card.Subtitle>
                         <ListGroup className="age-average-list">
                             {
                                 hightestAverageAge.map(team => (
@@ -29,8 +29,8 @@ function Top5(props) {
                             }
                         </ListGroup>
                     </Col>
-                    <Col>
-                        <Card.Title className="age-average-heading" >Lowest avg Age</Card.Title>
+                    <Col xs={12} lg={6} >
+                        <Card.Subtitle className="age-average-heading" >Lowest avg age</Card.Subtitle>
                         <ListGroup className="age-average-list">
                             {
                                 lowestAverageAge.map(team => (
