@@ -2,71 +2,58 @@
     color: #ffffff;
     background: rgb(176, 58, 120);
     background: linear-gradient(180deg, rgba(176, 58, 120, 1) 0%, rgba(117, 44, 123, 1) 100%);
-    box-shadow: 2px 5px 9px #696f6d1a;
     border-radius: 5px;
+    height: 185px;
     max-height: 25vh;
     margin: 10px auto;
-    display: flex;
-    justify-content: space-evenly;
     position: relative;
-}
+    display: grid;
+    grid-template-areas: "header header" "body body";
+    grid-template-rows: 30% 70%;
 
-.highlighted-player {
-    position: relative;
-
-    .subtitle {
-        font-size: 0.95rem;
+    .header {
+        text-align: center;
+        font-weight: bold;
+        line-height: 5;
     }
 
-    .most-picked {
+    .highlighted-player {
+        margin: auto;
+        margin-bottom: 33px;
 
-        .player-picture::after {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            border-radius: 50%;
-            border: 1px dashed #a65aa1;
-            margin: -5px;
+        .player-picture {
+            padding: 2px;
+            background-color: #a3035e;
+            // border: 2px solid black;
+        }
+
+        .figure-caption {
+            float: right;
         }
     }
-}
 
-.widget-title {
-    color: #562d85;
-}
+    .field-line {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        border-left: 0.1px solid var(--field-marking-color);
+        width: 1px;
+        height: 100%;
+    }
 
-.field-line {
-    width: 1px;
-    background-color: #a9538b;
-}
+    .field-center-circle {
+        position: absolute;
+        top: calc(50% - 25px);
+        left: calc(50% - 25px);
+        border: 1px solid var(--field-marking-color);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
 
-.field-center-circle {
-    border: 1px solid #a9538b;
-    width: 55px;
-    height: 55px;
-    top: 38%;
-    border-radius: 50%;
-    position: absolute;
-}
-
-.player-picture {
-    border-radius: 50%;
-    border: 2px solid #8e0871;
-    display: block;
-    width: 6rem;
-    height: 6rem;
-    margin-right: auto;
-    margin-bottom: 15px;
-    margin-left: auto;
-}
-
-.player-percentage {
-    position: absolute;
-    top: 32px;
-    left: 125px;
-    border-bottom: 1px solid #fff;
+    .player-percentage {
+        color: #ffffff;
+        font-weight: bold;
+        border-bottom: 1px solid #fff;
+    }
 }

@@ -1,19 +1,39 @@
 import profilePic from './profile-pic.png'
 import './HighlightedPlayers.scss'
+import { Figure } from 'react-bootstrap'
 
 function HighlightedPlayers() {
     return (
         <div className="highlighted-players">
-            <div className="highlighted-player most-picked">
-                <h3 className="subtitle" >Most picked player</h3>
-                <img src={profilePic} alt="avatar icon" className="player-picture" />
-                <p className="player-percentage">75%</p>
-            </div>
-            <div className="highlighted-player">
-                <h3 className="subtitle">Less picked player</h3>
-                <img src={profilePic} alt="avatar icon" className="player-picture" />
-                <p className="player-percentage">25%</p>
-            </div>
+            <div className="field-line"></div>
+            <div className="field-center-circle"></div>
+
+            <p className="header">Most picked player</p>
+            <p className="header">Less picked player</p>
+            <Figure className="highlighted-player">
+                <Figure.Image
+                    roundedCircle
+                    src={profilePic}
+                    width={100}
+                    className="player-picture"
+                >
+                </Figure.Image>
+                <Figure.Caption className="player-percentage">
+                    75%
+                </Figure.Caption>
+            </Figure>
+            <Figure className="highlighted-player">
+                <Figure.Image
+                    roundedCircle
+                    src={profilePic}
+                    width={100}
+                    className="player-picture"
+                >
+                </Figure.Image>
+                <Figure.Caption className="player-percentage">
+                    25%
+                </Figure.Caption>
+            </Figure>
         </div>
     )
 }

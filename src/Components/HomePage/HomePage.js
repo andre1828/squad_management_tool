@@ -1,3 +1,4 @@
+import './HomePage.scss'
 import MyTeams from './../MyTeams/MyTeams.js'
 import Top5 from './../Top5/Top5.js'
 import HighlightedPlayers from './../HighlightedPlayers/HighlightedPlayers.js'
@@ -24,7 +25,7 @@ function HomePage() {
     return (
         <>
                 <Row>
-                    <Col xs={12} md={6}>
+                    <Col xs={12} md={6} className="max-content">
                         <MyTeams teams={teams} />
                     </Col>
                     <Col>

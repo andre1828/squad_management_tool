@@ -1,5 +1,9 @@
 @import "~bootstrap/scss/bootstrap";
 
+:root{
+  --field-marking-color: #a66699;
+}
+
 html,
 body,
 #root {
@@ -36,6 +40,7 @@ body {
 
 .card {
   margin-top: 15px;
+  margin-bottom: 15px;
   box-shadow: 2px 5px 9px #696f6d1a;
   border: none;
   border-radius: 5px;
