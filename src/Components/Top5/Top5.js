@@ -1,6 +1,6 @@
 import './Top5.scss'
 import ListGroup from "react-bootstrap/ListGroup"
-import { Card, Container, Row, Col } from "react-bootstrap"
+import { Card, Row, Col } from "react-bootstrap"
 import { getHightestAverageAge, getLowestAverageAge } from '../../teamContext'
 
 function Top5(props) {

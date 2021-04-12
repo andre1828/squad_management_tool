@@ -2,9 +2,9 @@ import './HomePage.scss'
 import MyTeams from './../MyTeams/MyTeams.js'
 import Top5 from './../Top5/Top5.js'
 import HighlightedPlayers from './../HighlightedPlayers/HighlightedPlayers.js'
-import { addTeams, fetchTeams } from './../../teamContext.js'
-import { useEffect, useReducer, useState } from 'react'
-import { Col, Modal, Row, Button } from 'react-bootstrap'
+import { fetchTeams } from './../../teamContext.js'
+import { useEffect, useState } from 'react'
+import { Col, Row } from 'react-bootstrap'
 
 function HomePage() {
 
@@ -20,19 +20,19 @@ function HomePage() {
         }
 
         asyncFetch()
-    }, [])
+    }, [teams.length])
 
     return (
         <>
-                <Row>
-                    <Col xs={12} md={6} className="max-content">
-                        <MyTeams teams={teams} />
-                    </Col>
-                    <Col>
-                        <Top5 teams={teams} />
-                        <HighlightedPlayers />
-                    </Col>
-                </Row>
+            <Row>
+                <Col xs={12} md={6} className="max-content">
+                    <MyTeams teams={teams} />
+                </Col>
+                <Col>
+                    <Top5 teams={teams} />
+                    <HighlightedPlayers />
+                </Col>
+            </Row>
         </>
     )
 }

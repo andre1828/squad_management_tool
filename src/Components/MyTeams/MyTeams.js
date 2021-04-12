@@ -4,8 +4,6 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { useHistory } from 'react-router-dom'
 import { Paper } from '@material-ui/core'
-import { Modal } from 'react-bootstrap'
-import { useState } from 'react'
 
 function MyTeams(props) {
 
